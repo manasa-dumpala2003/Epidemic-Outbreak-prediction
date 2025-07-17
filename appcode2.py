@@ -98,7 +98,8 @@ for day in eval_df['ds'].unique():
     y_pred = row['yhat'].values
     if len(y_true) > 0 and len(y_pred) > 0:
         mae = mean_absolute_error(y_true, y_pred)
-        rmse = mean_squared_error(y_true, y_pred, squared=False)
+        rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+
         mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100 if y_true[0] != 0 else np.nan
         daily_metrics.append({'ds': day, 'MAE': mae, 'RMSE': rmse, 'MAPE': mape})
 
