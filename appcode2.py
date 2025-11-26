@@ -6,7 +6,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 import numpy as np
 
 # === Title ===
-st.set_page_config(page_title="COVID-19 Forecast India", layout="wide")
+st.set_page_config(page_title="COVID-19 Forecast India", layout="center")
 st.title("🦠 COVID-19 Forecasting for India")
 st.write("Using Prophet with Mobility and Lockdown Regressors")
 
@@ -165,3 +165,4 @@ st.download_button(
     file_name='august_forecast.csv',
     mime='text/csv'
 )
+
